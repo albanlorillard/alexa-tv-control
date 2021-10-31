@@ -1,0 +1,91 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "la télé",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GpioIntent",
+                    "slots": [
+                        {
+                            "name": "command",
+                            "type": "COMMAND"
+                        }
+                    ],
+                    "samples": [
+                        "de se mettre {status}",
+                        "de {status}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "COMMAND",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "KEY_POWER",
+                                "synonyms": [
+                                    "ON",
+                                    "s'allumer",
+                                    "démarrer",
+                                    "s'éteindre",
+                                    "s'arréter"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_MUTE",
+                                "synonyms": [
+                                    "sur mute",
+                                    "en silencieux",
+                                    "en silence",
+                                    "couper le son"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_VOLUMEUP",
+                                "synonyms": [
+                                    "mettre plus fort",
+                                    "d'augmenter le volume"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_VOLUMEDOWN",
+                                "synonyms": [
+                                    "mettre moins fort",
+                                    "de descendre le volume",
+                                    "de diminuer le volume"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

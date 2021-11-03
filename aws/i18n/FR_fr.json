@@ -1,0 +1,18 @@
+{
+    "KEY_POWER": "Très bien, j'{} la télé",
+    "KEY_0": "Je mets la chaine numéro 0",
+    "KEY_1": "Je mets la chaine numéro 1",
+    "KEY_2": "Je mets la chaine numéro 2",
+    "KEY_3": "Je mets la chaine numéro 3",
+    "KEY_4": "Je mets la chaine numéro 4",
+    "KEY_5": "Je mets la chaine numéro 5",
+    "KEY_6": "Je mets la chaine numéro 6",
+    "KEY_7": "Je mets la chaine numéro 7",
+    "KEY_8": "Je mets la chaine numéro 8",
+    "KEY_9": "Je mets la chaine numéro 9",
+    "KEY_VOLUMEUP": "J'augmente le volume",
+    "KEY_VOLUMEDOWN": "Je baisse le volume",
+    "KEY_MUTE": "Je coupe le son",
+    "KEY_CHANNELUP": "Je mets la chaine suivante",
+    "KEY_CHANNELDOWN": "Je mets la chaine précédente"
+}

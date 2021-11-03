@@ -3,6 +3,7 @@
  * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
  * session persistence, api calls, and more.
  * */
+const https = require('https')
 const Alexa = require('ask-sdk-core');
 
 const LaunchRequestHandler = {
@@ -107,8 +108,19 @@ const IntentReflectorHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
     },
     handle(handlerInput) {
-        const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
-        const speakOutput = `You just triggered ${intentName}`;
+
+        //const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
+        
+
+        const commandkey = handlerInput.requestEnvelope.request.intent.slots.command.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        console.log(Alexa.getRequestType(handlerInput.requestEnvelope));
+
+        const speakOutput = `Vous venez d'effectuer la commande ${commandkey}`;
+
+        https.get(`${process.env.RASPBERRY_BASEURL}/${commandkey}`, res => {
+        }).on('error', err => {
+          console.log(err.message);
+        })
 
         return handlerInput.responseBuilder
             .speak(speakOutput)

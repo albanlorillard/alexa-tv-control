@@ -82,6 +82,122 @@
                                     "de diminuer le volume"
                                 ]
                             }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_CHANNELUP",
+                                "synonyms": [
+                                    "mettre la chaine suivante",
+                                    "mettre la prochaine chaine",
+                                    "passer à la chaine suivante",
+                                    "passer à la prochaine chaine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_CHANNELDOWN",
+                                "synonyms": [
+                                    "mettre la chaine précédente",
+                                    "mettre la précédente chaine",
+                                    "passer à la chaine précédente",
+                                    "passer à la précédente chaine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_1",
+                                "synonyms": [
+                                    "mettre TF1",
+                                    "mettre la une",
+                                    "passer à la chaine numéro 1",
+                                    "passer à la une"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_2",
+                                "synonyms": [
+                                    "mettre France 2",
+                                    "mettre la deux",
+                                    "passer à la chaine numéro 2",
+                                    "passer à la 2"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KEY_3",
+                                "synonyms": [
+                                    "mettre France 3",
+                                    "mettre la trois",
+                                    "passer à la chaine numéro 3",
+                                    "passer à la 3"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_4",
+                                "synonyms": [
+                                    "mettre Canal",
+                                    "mettre Canal +",
+                                    "mettre la 4",
+                                    "passer à la chaine numéro 4",
+                                    "passer à la 4"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_5",
+                                "synonyms": [
+                                    "mettre France 5",
+                                    "mettre la cinq",
+                                    "passer à la chaine numéro 5",
+                                    "passer à la 5"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_6",
+                                "synonyms": [
+                                    "mettre M6",
+                                    "mettre la six",
+                                    "passer à la chaine numéro 6",
+                                    "passer à la 6"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_7",
+                                "synonyms": [
+                                    "mettre Arté",
+                                    "mettre la sept",
+                                    "passer à la chaine numéro 7",
+                                    "passer à la 7"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_8",
+                                "synonyms": [
+                                    "mettre C8",
+                                    "mettre la huit",
+                                    "passer à la chaine numéro 8",
+                                    "passer à la 8"
+                                ]
+                            }
+                        },{
+                            "name": {
+                                "value": "KEY_9",
+                                "synonyms": [
+                                    "mettre W9",
+                                    "mettre la neuf",
+                                    "passer à la chaine numéro 9",
+                                    "passer à la 9"
+                                ]
+                            }
                         }
                     ]
                 }

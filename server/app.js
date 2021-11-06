@@ -1,7 +1,10 @@
 require('dotenv').config({path: __dirname + '/.env'})
+
+const fs = require('fs');
+const https = require('https');
+const http = require('http');
 const express = require('express')
-const app = express()
-const port = 1994
+const exec = require('child_process').exec;
 
 // Securize server
 const helmet = require("helmet");
@@ -10,7 +13,12 @@ const cors = require('cors');
 // Log
 const morgan = require('morgan');
 
-const exec = require('child_process').exec;
+const app = express();
+
+var privateKey  = fs.readFileSync(process.env.SSL_PRIVKEY);
+var certificate = fs.readFileSync(process.env.SSL_CERT);
+
+var credentials = {key: privateKey, cert: certificate};
 
 function isRequestValid(req) {
     const regex = /^KEY_[A-Z]{3,16}$/;
@@ -56,8 +64,14 @@ app.get('/:command', (req, res) => {
     res.send('OK!', 200)
 })
 
-app.listen(port, () => {
-    console.log(`IR sender app listening on http://localhost:${port}`)
-})
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(process.env.PORT_HTTPS, () => {
+    console.log(`IR sender app listening on https://localhost:${process.env.PORT_HTTPS}`)
+});
 
+httpServer.listen(process.env.PORT_HTTP, () => {
+    console.log(`IR sender app listening on http://localhost:${process.env.PORT_HTTP}`)
+
+});
 module.exports = app;

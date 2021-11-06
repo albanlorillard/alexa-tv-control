@@ -1,8 +1,15 @@
-
+var fs = require('fs');
 const express = require('express')
 const app = express()
-const port = 5000
+const PORT = 1994
 const exec = require('child_process').exec;
+const https = require('https');
+const http = require('http');
+
+var privateKey  = fs.readFileSync('./sslcert/privkey.pem');
+var certificate = fs.readFileSync('./sslcert/cert.pem');
+
+var credentials = {key: privateKey, cert: certificate};
 
 app.get('/:command', (req, res) => {
     const command = req.params.command;
@@ -19,7 +26,7 @@ app.get('/:command', (req, res) => {
     res.send('OK!', 200)
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
-
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(PORT);
+httpServer.listen(1995);

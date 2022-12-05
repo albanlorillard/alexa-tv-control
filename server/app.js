@@ -5,6 +5,7 @@ const https = require('https');
 const http = require('http');
 const express = require('express')
 const exec = require('child_process').exec;
+const axios = require('axios');
 
 // Securize server
 const helmet = require("helmet");
@@ -63,6 +64,22 @@ app.get('/:command', (req, res) => {
     
     res.send('OK!', 200)
 })
+
+app.get('/pihole/:seconds', (req, res) => {
+	const isNumeric = (str) => {
+  		if (typeof str != "string") return false;
+  		return !isNaN(str) && !isNaN(parseInt(str));
+	}
+	if (!isNumeric(req.params.seconds)) {
+		res.sendStatus(400);
+		return;
+	}
+
+	axios.get(`${process.env.PIHOLE_BASEURL}/admin/api.php?disable=${req.params.seconds}&auth=${process.env.PIHOLE_PW}`)
+		.then((_) => { console.log("Désactivation du PIHole OK!"); res.sendStatus(200); })
+		.catch((err) => { console.log(`Erreur : ${err}`); res.sendStatus(400); });
+})
+
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);

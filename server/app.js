@@ -36,7 +36,7 @@ app.use( (req, res, next) => {
     const apiKeys = JSON.parse(process.env.API_KEYS ?? '[]');
 
     if (!apiKeys.includes(req.headers['x-api-key'])) {
-        res.send(403);
+        res.sendStatus(403);
         return null;
     }
 
@@ -46,16 +46,16 @@ app.use( (req, res, next) => {
 app.get('/:command', (req, res) => {
 
     if (!isRequestValid(req)) {
-        res.send(400);
+        res.sendStatus(400);
         return null;
     }
 
     const command = req.params.command;
 
     if (command === "KEY_POWER") {
-        exec('irsend send_once SAMSUNG_POWER KEY_POWER');
+        exec('irsend send_once SAMSUNG_AA59-00600A_POWER KEY_POWER');
     } else if (command.startsWith("KEY_")) {
-        exec('irsend send_once SAMSUNG '+command);
+        exec('irsend send_once SAMSUNG_AA59-00600A '+command);
     } else {
         res.send('Malformed command', 403);
         return;

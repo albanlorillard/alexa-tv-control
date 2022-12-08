@@ -21,7 +21,7 @@ var certificate = fs.readFileSync(process.env.SSL_CERT);
 var credentials = {key: privateKey, cert: certificate};
 
 function isRequestValid(req) {
-    const regex = /^KEY_[A-Z]{3,16}$/;
+    const regex = /^KEY_[A-Z0-9]{1,16}$/;
     return Object.keys(req.params).length == 1 
     && regex.test(req.params.command) 
     && req.params.command.length < 16;
